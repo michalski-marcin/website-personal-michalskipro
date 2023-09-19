@@ -1,0 +1,183 @@
+:root {
+  --cr1: #0b1118;
+  --cr2: #cafd36;
+  --cr3: #666b72;
+  --cr4: #b1bbc9;
+  --cr5: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: var(--cr1);
+  color: var(--cr5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  /* background: var(--cr1); */
+  background: rgba(11, 17, 24, 0.95);
+  backdrop-filter: blur(2px);
+}
+
+#menu-bar {
+  display: none;
+}
+
+header label {
+  font-size: 20px;
+  color: var(--cr-3);
+  display: none;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  padding: 20px 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list li {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 0 5px;
+}
+
+.menu-list a {
+  color: var(--cr2);
+}
+
+.resume-menu-el {
+  background-color: var(--cr2);
+}
+
+.resume-menu-el a {
+  color: var(--cr1);
+}
+
+main {
+  width: 90%;
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 150px;
+  height: 2000px;
+}
+
+section {
+  width: 80%;
+  margin: auto;
+}
+
+section .introduction {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-top {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 300px;
+  border-radius: 5px;
+}
+
+.profile-vertical {
+  width: 4px;
+  background: var(--cr1);
+  margin: 0 25px 0 25px;
+}
+
+.profile-text {
+  /* flex-grow: 1; */
+  width: 55%;
+}
+
+.profile-text h1 {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--cr2);
+}
+
+.profile-text h2 {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  line-height: 23px;
+}
+
+.profile-text p {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 1px;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+.profile-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.bottom-container {
+  text-align: center;
+}
+
+.bottom-container p {
+  color: var(--cr2);
+}
+
+.border-vertical {
+  width: 1px;
+  border: 1px solid var(--cr5);
+}
+
+@media (max-width: 580px) {
+  header label {
+    display: initial;
+  }
+
+  #menu-bar:checked ~ .navbar {
+    left: 0;
+  }
+
+  nav {
+    position: absolute;
+    background: rgba(11, 17, 24, 0.99);
+    backdrop-filter: blur(2px);
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -120%);
+    width: 70%;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-list li {
+    display: block;
+    text-align: center;
+    padding: 15px;
+  }
+}
