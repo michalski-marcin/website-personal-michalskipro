@@ -167,11 +167,37 @@ h1 span {
   margin-bottom: 10px;
 }
 
-.vertical-bar {
-  width: 2px;
-  height: 100px;
-  background: var(--cr5);
+.profile-text-more {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
 }
+
+
+
+.main-tech, .minor-tech {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.main-tech img {
+  height: 40px;
+  margin: 0 10px;
+  opacity: 0.8;
+}
+
+
+.minor-tech img {
+  height: 25px;
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+.main-tech .not-done{
+  opacity: 0.1;
+}
+
 .footer {
   display: flex;
   justify-content: center;
