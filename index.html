@@ -11,23 +11,23 @@
 <body>
     <header>
         <div class="wrap">
-            <div class="logo">LOGO</div>
+            <div class="logo"><img src="pics/logo.svg" alt="logo">michalski</div>
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul class="menu-list">
                     <li><a onclick="showSection('introduction')" class="about-link" href="#">about</a></li>
-                    <li><a onclick="showSection('blog')" href="#">blog</a></li>
                     <li><a onclick="showSection('projects')" href="#">projects</a></li>
-                    <li class="resume-menu-el"><a href="#">interactive resume</a></li>
+                    <li><a onclick="showSection('contact')" href="#">contact</a></li>
+                    <li class="resume-menu-el"><a href="#">resume</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <aside>
+    <!-- <aside>
         <div class="side-bar github"><a href="http://www.github.com/michalski-marcin" target=”_blank”>Check my latest projects on GitHub!</a><img class="side-icon" src="pics/githubicon.svg" alt=""></div>
         <div class="side-bar linkedin"><a href="http://www.linkedin.com/in/michalski-marcin" target=”_blank”>Find out more about me on LinkedIn.</a><img class="side-icon" src="pics/linkedinicon.svg" alt=""></div>
-    </aside>
+    </aside> -->
     <main>
         <section id="introduction">
             <div>
@@ -46,17 +46,30 @@
                     expectations, delivering experiences that leave a lasting impression on users. Let's bring your
                     ideas to life, together.</p>
                 <div class="profile-text-more">
-                    
+                    TECH STACK
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem impedit consectetur culpa dolore cum cumque, nostrum reiciendis aliquam eaque tenetur nesciunt officiis eos aspernatur, dicta aliquid molestias molestiae sint at!</p>
                 </div>
             </div>
         </section>
-        <section id="blog">
-            Blog
-        </section>      
         <section id="projects">
             Projects
-        </section> 
+        </section>
+        <section id="contact">
+            Contact
+        </section>      
+         
     </main>
+    <footer>
+        <div class="wrap footer">
+            <div class="copywrite">
+             <span>&copy; </span>2023 Marcin Michalski
+            </div>
+            <div class="socials-links">
+            <div><img src="pics/githubicon.svg" alt="git"><a href="http://www.github.com/michalski-marcin">GitHub</a></div>
+            <div><img src="pics/linkedinicon.svg" alt="linkedin"><a href="http://www.linkedin.com/in/michalski-marcin">LinkedIn</a></div>
+        </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 

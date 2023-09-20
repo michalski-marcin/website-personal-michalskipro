@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
 }
 
-header {
+header, footer {
   position: fixed;
   top: 0;
   left: 50%;
@@ -36,6 +36,22 @@ header {
   background: rgba(11, 17, 24, 0.95);
   backdrop-filter: blur(2px);
   z-index: 999;
+}
+
+footer {
+  bottom: 0;
+  top: initial;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+.logo img {
+  height: 35px;
+  margin-right: 10px;
 }
 
 #menu-bar {
@@ -74,57 +90,18 @@ header label {
 
 .resume-menu-el {
   background-color: var(--cr2);
+  border-radius: 5px;
 }
 
 .resume-menu-el a {
   color: var(--cr1);
 }
 
-.side-bar {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 45px;
-  border-radius: 0 23px 23px 0;
-  background: rgba(11, 17, 24, 0.92);
-  backdrop-filter: blur(2px);
-  transition: 0.6s cubic-bezier(0.175, 0.585, 0.32, 1);
-  z-index: 9;
-}
-
-.side-bar a {
-  display: block;
-  text-decoration: none;
-  color: var(--cr2);
-}
-
-.github {
-  top: 100px;
-  left: -315px;
-}
-
-.linkedin {
-  top: 170px;
-  left: -320px;
-}
-
-.github:hover,
-.linkedin:hover {
-  left: 0;
-}
-
-.side-icon {
-  height: 46px;
-  margin-left: 20px;
-}
-
 main {
   width: 90%;
   max-width: 1280px;
   margin: auto;
-  padding-top: 150px;
-  height: 2000px;
+  padding-top: 180px;
   position: relative;
 }
 
@@ -142,12 +119,11 @@ section {
   transform: translateX(-50%);
 }
 
-#blog,
+#contact,
 #projects {
   position: absolute;
   left: 200%;
   transform: translateX(-50%);
-  
 }
 
 .profile-pic {
@@ -195,6 +171,39 @@ h1 span {
   width: 2px;
   height: 100px;
   background: var(--cr5);
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.copywrite {
+  position: absolute;
+  left: 35px;
+  font-size: 14px;
+}
+
+.footer span {
+  color: var(--cr2);
+}
+
+.socials-links {
+  display: flex;
+  gap: 22px;
+}
+
+.socials-links a {
+  color: var(--cr5);
+}
+
+.footer div {
+  display: flex;
+  align-items: center;
+}
+.footer img{
+  height: 23px;
+  margin-right: 7px;
 }
 
 @media (max-width: 580px) {
