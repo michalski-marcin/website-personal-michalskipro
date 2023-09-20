@@ -16,51 +16,46 @@
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">blog</a></li>
-                    <li><a href="#">projects</a></li>
+                    <li><a onclick="showSection('introduction')" class="about-link" href="#">about</a></li>
+                    <li><a onclick="showSection('blog')" href="#">blog</a></li>
+                    <li><a onclick="showSection('projects')" href="#">projects</a></li>
                     <li class="resume-menu-el"><a href="#">interactive resume</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    <aside>
+        <div class="side-bar github"><a href="http://www.github.com/michalski-marcin" target=”_blank”>Check my latest projects on GitHub!</a><img class="side-icon" src="pics/githubicon.svg" alt=""></div>
+        <div class="side-bar linkedin"><a href="http://www.linkedin.com/in/michalski-marcin" target=”_blank”>Find out more about me on LinkedIn.</a><img class="side-icon" src="pics/linkedinicon.svg" alt=""></div>
+    </aside>
     <main>
-        <section class="introduction">
-            <div class="profile-top">
-                <div>
-                    <img class="profile-pic" src="pics/profile.jpg" alt="profile picture">
-                </div>
-                <div class="profile-vertical"></div>
-                <div class="profile-text">
-                    <h1>
-                        Hi, I'm <span>Marcin</span>
-                    </h1>
-
-                    <h2>A Front-End & App Developer based in Wroclaw, Poland.</h2>
-                    <p>I'm passionate about programming and dedicated to crafting seamless user experiences through
-                        clean, efficient code and creative design solutions.</p>
-                    <p>I look forward to the opportunity to collaborate on projects that not only meet but exceed
-                        expectations, delivering experiences that leave a lasting impression on users. Let's bring your
-                        ideas to life, together.</p>
-                </div>
+        <section id="introduction">
+            <div>
+                <img class="profile-pic" src="pics/profile.jpg" alt="profile picture">
             </div>
-            <div class="profile-bottom">
-                <div class="bottom-container">
-                    <p>tech</p>
-                    HTML CSS JS REACT
-                </div>
-                <div class="border-vertical"></div>
-                <div class="bottom-container">
-                    <p>socials</p>
-                    linked github
-                </div>
-                <div class="border-vertical"></div>
-                <div class="bottom-container">
-                    <p>contact</p>
+            <div class="profile-vertical"></div>
+            <div class="profile-text">
+                <h1>
+                    Hi, I'm <span>Marcin</span>
+                </h1>
+
+                <h2>A Front-End & App Developer based in Wroclaw, Poland.</h2>
+                <p>I'm passionate about programming and dedicated to crafting seamless user experiences through
+                    clean, efficient code and creative design solutions.</p>
+                <p>I look forward to the opportunity to collaborate on projects that not only meet but exceed
+                    expectations, delivering experiences that leave a lasting impression on users. Let's bring your
+                    ideas to life, together.</p>
+                <div class="profile-text-more">
+                    
                 </div>
             </div>
         </section>
-
+        <section id="blog">
+            Blog
+        </section>      
+        <section id="projects">
+            Projects
+        </section> 
     </main>
     <script src="script.js"></script>
 </body>

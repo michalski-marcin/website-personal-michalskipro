@@ -1,3 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;600&display=swap");
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Albert Sans', sans-serif;
+ */
+
 :root {
   --cr1: #0b1118;
   --cr2: #cafd36;
@@ -16,7 +22,9 @@
 body {
   background: var(--cr1);
   color: var(--cr5);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Albert Sans", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -25,9 +33,9 @@ header {
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  /* background: var(--cr1); */
   background: rgba(11, 17, 24, 0.95);
   backdrop-filter: blur(2px);
+  z-index: 999;
 }
 
 #menu-bar {
@@ -72,31 +80,78 @@ header label {
   color: var(--cr1);
 }
 
+.side-bar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 45px;
+  border-radius: 0 23px 23px 0;
+  background: rgba(11, 17, 24, 0.92);
+  backdrop-filter: blur(2px);
+  transition: 0.6s cubic-bezier(0.175, 0.585, 0.32, 1);
+  z-index: 9;
+}
+
+.side-bar a {
+  display: block;
+  text-decoration: none;
+  color: var(--cr2);
+}
+
+.github {
+  top: 100px;
+  left: -315px;
+}
+
+.linkedin {
+  top: 170px;
+  left: -320px;
+}
+
+.github:hover,
+.linkedin:hover {
+  left: 0;
+}
+
+.side-icon {
+  height: 46px;
+  margin-left: 20px;
+}
+
 main {
   width: 90%;
   max-width: 1280px;
   margin: auto;
   padding-top: 150px;
   height: 2000px;
+  position: relative;
 }
 
 section {
   width: 80%;
   margin: auto;
+  transition: 0.8s;
 }
 
-section .introduction {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-top {
+#introduction {
   display: flex;
   justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#blog,
+#projects {
+  position: absolute;
+  left: 200%;
+  transform: translateX(-50%);
+  
 }
 
 .profile-pic {
-  width: 300px;
+  width: 350px;
   border-radius: 5px;
 }
 
@@ -136,23 +191,10 @@ h1 span {
   margin-bottom: 10px;
 }
 
-.profile-bottom {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
-}
-
-.bottom-container {
-  text-align: center;
-}
-
-.bottom-container p {
-  color: var(--cr2);
-}
-
-.border-vertical {
-  width: 1px;
-  border: 1px solid var(--cr5);
+.vertical-bar {
+  width: 2px;
+  height: 100px;
+  background: var(--cr5);
 }
 
 @media (max-width: 580px) {
