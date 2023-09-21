@@ -7,5 +7,7 @@ function showSection(idToShow) {
     }
 
     setTimeout(function () { document.getElementById(idToShow).style = `left: 50%; opacity:1` }, 500)
-
 }
+
+
+

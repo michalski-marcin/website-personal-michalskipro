@@ -181,17 +181,21 @@ h1 span {
   margin-bottom: 20px;
 }
 
+.main-tech,
+.minor-tech {
+  /* opacity: 0.8; */
+  filter: saturate(75%);
+}
+
 .main-tech img {
   height: 40px;
   margin: 0 10px;
-  opacity: 0.8;
 }
 
 
 .minor-tech img {
   height: 25px;
   margin: 0 8px;
-  opacity: 0.8;
 }
 
 .main-tech .not-done{
@@ -230,6 +234,29 @@ h1 span {
 .footer img{
   height: 23px;
   margin-right: 7px;
+}
+
+@media (max-width: 1158px) {
+  .wrap {
+    width: 100%;
+  }
+  section {
+    width: 95%;
+  };
+
+  .main-tech img {
+    height: 25px;
+  }
+
+  .minor-tech img {
+    height: 20px;
+  }
+
+  .profile-vertical {
+    margin: 0 15px;
+  }
+
+
 }
 
 @media (max-width: 580px) {
