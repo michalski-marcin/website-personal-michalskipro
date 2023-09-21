@@ -198,9 +198,44 @@ h1 span {
   margin: 0 8px;
 }
 
+.minor-tech img,
+.main-tech img {
+  transition: 0.6s;
+}
+
 .main-tech .not-done{
   opacity: 0.1;
 }
+
+.icon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-tooltip .icon-tooltiptext {
+  opacity: 0;
+  background: rgba(11, 17, 24, 0.8);
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 10px;
+  transition: 0.4s;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 1;
+}
+
+.icon-tooltip:hover img {
+  opacity: 0;
+}
+
+.icon-tooltip:hover .icon-tooltiptext {
+  opacity: 1;
+}
+
+
 
 .footer {
   display: flex;
