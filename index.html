@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div class="gradient-background"></div>
     <header>
         <div class="wrap">
             <div class="logo"><img src="pics/logo.svg" alt="logo">michalski</div>
@@ -20,50 +21,28 @@
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a class="menu-link" id="about" href="#">about</a></li>
-                    <li><a class="menu-link" id="skills" href="#">skills</a></li>
-                    <li><a class="menu-link" id="projects" href="#">projects</a></li>
-                    <li><a class="menu-link" id="contact" href="#">contact</a></li>
+                    <li><a class="menu-link active-link target" id="about" href="#"><span class="skills-about">></span>
+                            about</a></li>
+                    <li><a class="menu-link target" id="skills" href="#"><span class="skills-arrow">></span> skills</a>
+                    </li>
+                    <li><a class="menu-link target" id="projects" href="#"><span class="projects-arrow">></span>
+                            projects</a></li>
+                    <li><a class="menu-link target" id="contact" href="#"><span class="contact-arrow">></span>
+                            contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
         <section>
-            <div class="profile-upper">
-                <div class="pic-wrapper">
-                <div class="profile-pic-container">
-                    <img class="profile-pic" src="pics/profile.jpg" alt="profile picture">
-                </div>
-            </div>
-                <div class="profile-text">
-                    <h1>
-                        Hi, I'm <span>Marcin</span>
-                    </h1>
 
-                    <h2>A Front-End & App Developer based in Wroclaw, Poland.</h2>
-                    <div class="profile-text-break"></div>
-                    <div class="profile-text-more">
-                      
-                    </div>
-                </div>
-            </div>
-            
         </section>
     </main>
     <footer>
-        <div class="wrap footer">
-            <div class="copywrite">
-                <span>&copy; </span>2023 Marcin Michalski
-            </div>
-            <div class="socials-links">
-                <div><img src="pics/githubicon.svg" alt="git"><a href="http://www.github.com/michalski-marcin"
-                        target=”_blank”>GitHub</a></div>
-                <div><img src="pics/linkedinicon.svg" alt="linkedin"><a
-                        href="http://www.linkedin.com/in/michalski-marcin" target=”_blank”>LinkedIn</a></div>
-            </div>
-        </div>
+
     </footer>
+    <div class="circle"></div>
     <script src="script.js" type="module"></script>
 </body>
+
 </html>

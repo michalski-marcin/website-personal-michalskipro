@@ -1,4 +1,24 @@
-
+const about = {
+        name: "about",
+        content:`
+        <div class="profile">
+                <div class="pic-wrapper">
+                    <div class="profile-pic-container">
+                        <img class="profile-pic" src="pics/profile.jpg" alt="profile picture">
+                    </div>
+                </div>
+                <div class="profile-text">
+                <p>const <span class="code-different">frontendDev</span> = <span class="code-different">{</span>
+    firstName: <span class="code-string">"Marcin"</span>,
+    lastName: <span class="code-string">"Michalski"</span>,
+    basedIn: <span class="code-string">"Wroclaw, Poland"</span>,
+    repositories: <a href="https://github.com/michalski-marcin">github.com</a>,
+    socials: <a href="https://linkedin.com/in/michalski-marcin">linkedin.com</a>
+    <span class="code-different">}</span>;</p>
+                    </div>
+                </div>
+        `
+}
 
 const skills = {
     name: "skills",
@@ -39,5 +59,9 @@ const projects = {
     name: "projects",
     content: `Project HAHAJAJ`}
 
+const contact = {
+    name: "contact",
+    content: `hejo`}
 
-export const contentArr = [skills, projects]
+
+export const contentArr = [about, skills, projects, contact]
