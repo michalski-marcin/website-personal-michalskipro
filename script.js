@@ -1,13 +1,18 @@
 const profileCodeText = document.querySelector('.profile-text')
 const profileCodeNums = document.querySelector('.profile-code')
+const profileDescription = document.querySelector('.description')
 const contentArr = ["about", "skills", "projects", "contact"]
 const sections = document.querySelectorAll('section')
 const menuLink = document.querySelectorAll('.menu-link')
 const arrowLink = document.querySelectorAll('.menu-link span')
 
 
+
 arrowLink[0].style.transform = 'rotate(90deg)'
 menuLink[0].classList.add("active-link")
+
+
+
 
 function showSection(idToShow) {
     let sections = document.querySelectorAll('section');
@@ -97,17 +102,22 @@ document.addEventListener("mousemove", (e) => {
 })
 
 
-profileCodeText.innerHTML += `
-<p>
-<span class="code-num">1</span>  const <span class="code-different">frontendDev</span> = <span class="code-different">{</span>
-<span class="code-num">2</span>      firstName: <span class="code-string">"Marcin"</span>,
-<span class="code-num">3</span>      lastName: <span class="code-string"> "Michalski"</span>,
-<span class="code-num">4</span>      basedIn: <span class="code-string">  "Wroclaw, Poland"</span>,
-<span class="code-num">5</span>      repositories: <a href="https://github.com/michalski-marcin">github.com</a>,
-<span class="code-num">6</span>      socials:      <a href="https://linkedin.com/in/michalski-marcin">linkedin.com</a>
-<span class="code-num">7</span>      <span class="code-different">}</span>;
-</p>    
+
+
+const profileDescriptionText = `I'm passionate about programming and dedicated to crafting seamless user experiences through
+clean, efficient code and creative design solutions.
+I look forward to the opportunity to collaborate on projects that not only meet but exceed
+expectations, delivering experiences that leave a lasting impression on users. Let's bring your
+ideas to life, together.
 `
 
+let indexText = 0
+const addLetter = () => {
+    profileDescription.textContent += profileDescriptionText[indexText];
+    indexText++;
+    
+    if (indexText == profileDescriptionText.length) clearInterval(indexTyping);
+}
 
 
+const indexTyping = setInterval(addLetter, 35);

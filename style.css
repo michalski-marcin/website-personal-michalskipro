@@ -7,6 +7,7 @@
   --cr3: #4eeefc;
   --cr4: #fc286c;
   --cr5: #ebebeb;
+  --cr6: #b4dadf;
 }
 
 * {
@@ -27,7 +28,7 @@ body {
   background: var(--cr1);
   /* background: radial-gradient(70% 70% at 280px 220px, #0f2235, var(--cr1)); */
 
-  color: var(--cr5);
+  color: var(--cr6);
   font-family: "source code", monospace;
   max-width: 100%;
   overflow: hidden;
@@ -125,7 +126,7 @@ header label {
 }
 
 .active-link {
-  text-shadow: 1px 1px 8px rgba(202, 253, 54, 1);
+  text-shadow: 0 0 8px rgba(202, 253, 54, 1);
 }
 
 .menu-link {
@@ -178,9 +179,30 @@ section {
 }
 
 .profile {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  justify-content: ;
+  margin-top: 70px;
+  letter-spacing: 1px;
+  line-height: 2rem;
+  color: var(--cr6);
+  font-size: 22px;
+  position: relative;
+}
+
+.profile a {
+  color: var(--cr3);
+}
+
+.code-string {
+  color: var(--cr2);
+}
+
+.code-different {
+  color: var(--cr4);
+}
+
+.code-num {
+  color: #142a3f;
+  margin-right: 35px;
 }
 
 .profile-pic-container {
@@ -217,6 +239,7 @@ section {
   position: absolute;
   left: 20px;
   top: -50px;
+  display: none;
 }
 
 .vertical-line {
@@ -258,42 +281,16 @@ section {
   margin: 0 25px 0 25px;
 }
 
-.profile-text {
-  /* flex-grow: 1; */
-  white-space: pre;
-  letter-spacing: 1px;
-  line-height: 1.7rem;
-  width: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #b7b7b7;
-  font-size: 20px;
-  position: relative;
-}
-
-.profile-text a {
-  color: var(--cr3);
-}
-
-.code-string {
-  color: var(--cr2);
-}
-
-.code-different {
-  color: var(--cr4);
-}
-
-.code-num {
-  color: #142a3f;
-}
-
 .profile-bottom {
+  white-space: ;
   margin: auto;
   width: 80%;
-  margin-top: 40px;
+  margin-top: 100px;
   margin-bottom: 100px;
-  line-height: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: #80b1b6;
 }
 
 /* .profile-text h1 {
