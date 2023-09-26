@@ -42,19 +42,20 @@ body {
   left: -15px;
   border-radius: 50%;
   border: 1px solid var(--cr2);
-  box-shadow: 0px 0.8px 12px var(--cr2);
-  animation: rotation 1s linear infinite;
+  box-shadow: 0px 0.7px 15px var(--cr2);
+  animation: rotation 2s linear infinite;
   background: var(--cr2);
   transition: width 0.2s, height 0.2s;
 }
 
 .big {
   border: 1px solid var(--cr5);
-  box-shadow: 0px 0.5px 13px var(--cr5);
+  box-shadow: 0px 2px 18px var(--cr5);
   background: none;
+  top: -10px;
   width: 30px;
   height: 30px;
-  animation: rotation 1.2s linear infinite;
+  animation: rotation 3s linear infinite;
 }
 
 .gradient-background {
@@ -154,12 +155,14 @@ main {
   width: 90%;
   max-width: 1280px;
   margin: auto;
-  padding-top: 180px;
+  padding-top: 130px;
   position: relative;
-  transform: ;
+  
 }
 
 section {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   width: 80%;
   transition: 0.8s;
@@ -184,10 +187,7 @@ section {
   margin-top: 30px;
 }
 
-.profile-bottom {
-  margin-top: 30px;
-  margin-bottom: 100px;
-}
+
 
 .profile-pic-container {
   position: relative;
@@ -222,7 +222,7 @@ section {
 .vertical-line,
 .horizontal-line {
   position:absolute;
-  left: 40px;
+  left: 20px;
   top: -50px;
 }
 
@@ -241,7 +241,7 @@ section {
 
 .horizontal-line {
   height: 1px;
-  width: 700px;
+  width: 800px;
   background: linear-gradient(to right, rgba(202, 253, 54, 1), rgba(202, 253, 54, 0))
 }
 
@@ -269,7 +269,10 @@ section {
   align-items: center;
   color: #b7b7b7;
   font-size: 20px;
+  position: relative;
 }
+
+
 
 .profile-text a {
   color: var(--cr3);
@@ -281,6 +284,18 @@ section {
 
 .code-different {
   color: var(--cr4);
+}
+
+.code-num {
+  color: #142a3f;
+}
+
+.profile-bottom {
+  margin: auto;
+  width: 80%;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  line-height: 1.4rem;
 }
 
 /* .profile-text h1 {
