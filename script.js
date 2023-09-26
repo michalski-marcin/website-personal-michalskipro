@@ -1,46 +1,44 @@
-import { contentArr } from './content.js';
 
 
-const contentScreen = document.querySelector('section')
+const contentArr = ["about", "skills", "projects", "contact"]
+const sections = document.querySelectorAll('section')
 const menuLink = document.querySelectorAll('.menu-link')
 let arrowLink = document.querySelectorAll('.menu-link span')
 
-
-contentScreen.innerHTML = contentArr[0].content
 arrowLink[0].style.transform = 'rotate(90deg)'
 
+function showSection(idToShow) {
+    let sections = document.querySelectorAll('section');
+    for (let i = 0; i < sections.length; i++) {
+        if (idToShow != sections[i].id) {
+            sections[i].style = `left: 200%; opacity:0`;
+        }
+    }
 
+    setTimeout(function () { document.getElementById(idToShow).style = `left: 50%; opacity:1` }, 500)
+}
 
 menuLink.forEach((item) => {
     item.addEventListener("click", function (e) {
-        if (!contentScreen.classList.contains(e.target.id)) {
-            turnBackArrow(e.target.id)
-            linkEffects(item)
-            for (let i = 0; i < contentArr.length; i++) {
-                if (arrowLink[i].classList.contains('arrow-visible')) {
-                    arrowLink[i].style.transform = 'rotate(0deg)'
-                }
-                if (contentArr[i].name == e.target.id) {
-                    setTimeout(function () { arrowLink[i].style.transform = 'rotate(90deg)' }, 700)
-                    arrowLink[i].classList.add('arrow-visible')
-                    contentScreen.style = `left: 200%; opacity:0`;
-                    setTimeout(function () { contentScreen.innerHTML = contentArr[i].content }, 500)
-                    contentScreen.className = e.target.id
-                    setTimeout(function () { contentScreen.style = `left: 50%; opacity:1` }, 500)
+
+        for (let i = 0; i < sections.length; i++) {
+            arrowLink[i].style.transform = 'rotate(0deg)'
+            if (!e.target.classList.contains(sections[i].id)) {
+                linkEffects(item)
+
+                if (menuLink[i].classList.contains("active-link")) {
+                    setTimeout(function () { arrowLink[i].style.transform = 'rotate(90deg)' }, 600)
                 }
             }
         }
     })
 })
 
-function turnBackArrow(id) {
-    for (let i = 0; i < arrowLink.length; i++) {
-        if (arrowLink[i].classList.contains(`${id}-arrow`)) {
-            arrowLink[i].style.transform = "rotate(0deg)"
-        }
 
-    }
-}
+
+
+
+
 
 function linkEffects(e) {
 
@@ -48,6 +46,7 @@ function linkEffects(e) {
         menuLink[i].classList.remove("active-link")
     }
     e.classList.add("active-link")
+    console.log(e.classList)
 }
 
 

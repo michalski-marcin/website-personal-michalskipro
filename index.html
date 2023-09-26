@@ -21,28 +21,52 @@
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a class="menu-link active-link target" id="about" href="#"><span class="skills-about">></span>
+                    <li><a class="menu-link target"  href="#" onclick="showSection('introduction')"><span class="skills-about">></span>
                             about</a></li>
-                    <li><a class="menu-link target" id="skills" href="#"><span class="skills-arrow">></span> skills</a>
+                    <li><a class="menu-link target"  href="#" onclick="showSection('skills')"><span class="skills-arrow">></span> skills</a>
                     </li>
-                    <li><a class="menu-link target" id="projects" href="#"><span class="projects-arrow">></span>
+                    <li><a class="menu-link target"  href="#" onclick="showSection('projects')"><span class="projects-arrow">></span>
                             projects</a></li>
-                    <li><a class="menu-link target" id="contact" href="#"><span class="contact-arrow">></span>
+                    <li><a class="menu-link target" href="#" onclick="showSection('contact')"><span class="contact-arrow">></span>
                             contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section>
-
+        <section id="introduction">
+            <div class="profile">
+                <div class="pic-wrapper">
+                    <div class="profile-pic-container">
+                        <img class="profile-pic" src="pics/profile.jpg" alt="profile picture">
+                        
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="vertical-line bottom-line"></div>
+                    <div class="horizontal-line"></div>
+                </div>
+                <div class="profile-text">
+                <p>const <span class="code-different">frontendDev</span> = <span class="code-different">{</span>
+    firstName: <span class="code-string">"Marcin"</span>,
+    lastName: <span class="code-string">"Michalski"</span>,
+    basedIn: <span class="code-string">"Wroclaw, Poland"</span>,
+    repositories: <a href="https://github.com/michalski-marcin">github.com</a>,
+    socials: <a href="https://linkedin.com/in/michalski-marcin">linkedin.com</a>
+    <span class="code-different">}</span>;</p>
+                    </div>
+                </div>
         </section>
+        <section id="skills">
+            skills
+        </section>
+        <section id="projects">proo</section>
+        <section id="contact">contact</section>
     </main>
     <footer>
 
     </footer>
     <div class="circle"></div>
-    <script src="script.js" type="module"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

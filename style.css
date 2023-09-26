@@ -1,9 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;600&display=swap");
-/* font-family: 'Josefin Sans', sans-serif;
-font-family: 'Albert Sans', sans-serif;
- font-family: 'Red Hat Mono', monospace;*/
+
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;600&display=swap');
 
 :root {
   --cr1: #0b1118;
@@ -32,7 +29,7 @@ body {
   /* background: radial-gradient(70% 70% at 280px 220px, #0f2235, var(--cr1)); */
 
   color: var(--cr5);
-  font-family: "Fira Code", monospace;
+  font-family: 'source code', monospace;
   max-width: 100%;
   overflow: hidden;
 }
@@ -141,7 +138,7 @@ header label {
 }
 
 .menu-link:hover span {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .active-link span {
@@ -150,10 +147,6 @@ header label {
   transition: 0.3s;
 }
 
-.resume-menu-el {
-  background-color: var(--cr2);
-  border-radius: 5px;
-}
 
 /* MAIN SECTION */
 
@@ -175,6 +168,14 @@ section {
   justify-content: center;
   left: 50%;
   transform: translateX(-50%);
+  transition: 0.4s;
+}
+
+#skills, 
+#projects,
+#contact {
+  left: 200%;
+  opacity: 0;
 }
 
 .profile {
@@ -190,18 +191,58 @@ section {
 
 .profile-pic-container {
   position: relative;
-  width: 300px;
+  width: 290px;
   height: 350px;
-  border-radius: 0 40% 20% 40%;
+  /* border-radius: 0 20% 10% 20%; */
+  /* border-radius: 25px; */
+  border: 1px var(--cr2) solid;
   overflow: hidden;
   z-index: 1;
-  /* box-shadow: -10px 15px 10px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.1); */
 }
+
+
 .pic-wrapper {
   position: relative;
-  width: 300px;
+  width: 290px;
   height: 350px;
   margin-right: 50px;
+}
+
+.pic-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 290px;
+  height: 350px;
+  left: 5px;
+  top: -5px;
+  border: 1px solid var(--cr2);
+}
+
+.vertical-line,
+.horizontal-line {
+  position:absolute;
+  left: 40px;
+  top: -50px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 45px;
+  background: var(--cr2);
+  
+}
+
+.bottom-line {
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(202, 253, 54, 1), rgba(202, 253, 54, 0));
+  top: 350px
+}
+
+.horizontal-line {
+  height: 1px;
+  width: 700px;
+  background: linear-gradient(to right, rgba(202, 253, 54, 1), rgba(202, 253, 54, 0))
 }
 
 .profile-pic {
