@@ -573,10 +573,10 @@ body {
   .logo {
     font-size: 27px;
   }
-  .logo img {
+  /* .logo img {
     height: 30px;
     margin-right: 10px;
-  }
+  } */
 
   .menu-list li {
     display: block;
@@ -600,10 +600,12 @@ body {
 } 
 
 @media screen and (max-width: 490px) {
+  .logo p {
+    display: none;
+  }
 
   .wrap {
-    padding: 20px 15px;
-    width: ;
+    padding: 25px;
   }
 
   

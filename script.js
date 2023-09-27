@@ -143,4 +143,4 @@ const addLetter = () => {
 }
 
 
-const indexTyping = setInterval(addLetter, 20);
+const indexTyping = setInterval(addLetter, 10);
