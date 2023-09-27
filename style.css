@@ -104,7 +104,7 @@ header label {
 }
 
 .wrap {
-  width: 90%;
+  width: 900%;
   max-width: 1280px;
   margin: auto;
   display: flex;
@@ -599,16 +599,57 @@ body {
 } 
 
 @media screen and (max-width: 490px) {
+
+  .wrap {
+    padding: 20px 15px;
+    width: ;
+  }
+
+  
+  .code-num {
+    margin-right: 20px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  /* .logo p {
+    display: none;
+  } */
+
+  main {
+    width: 100%;
+    padding-top: 80px;
+    
+  }
+  
+  section {
+    width:100%;
+    scroll-margin-top: 80px;
+  }
+
   .profile-upper {
     font-size: 18px;
     letter-spacing: 0px;
     line-height: 1.6rem;
+    padding-left: 15px;
+  }
+
+  .intro-wrap {
+    width: 100%;
   }
 
   .profile-bottom {
     width: 90%;
     margin-top: 80px;
   }
+}
+
+@media screen and (max-width: 354px) {
+      .profile-upper {
+        font-size: 16px;
+      }
 }
 
 @keyframes rotation {
