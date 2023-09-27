@@ -7,11 +7,29 @@ const menuLink = document.querySelectorAll('.pointer-link')
 const arrowLink = document.querySelectorAll('.pointer-link span')
 const circle = document.querySelector('.circle')
 const navBar = document.querySelector("header");
+const checkbox = document.getElementById('menu-bar')
+const hamburgerLine1 = document.querySelector('.line1')
+const hamburgerLine2 = document.querySelector('.line2')
+const hamburgerLine3 = document.querySelector('.line3')
+
+checkbox.addEventListener('change', function () {
+
+    if (checkbox.checked) {
+        console.log(hamburgerLine1)
+        hamburgerLine1.style.transform = "rotate(45deg)"
+        hamburgerLine2.style.transform = "scaleY(0)"
+        hamburgerLine3.style.transform = "rotate(-45deg)"
+    } else {
+        hamburgerLine1.style.transform = "rotate(0deg)"
+        hamburgerLine2.style.transform = "scaleY(1)"
+        hamburgerLine3.style.transform = "rotate(0deg)"
+    }
+})
 
 const offset = 130;
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY <= offset){
+    if (window.scrollY <= offset) {
         navBar.style.background = "rgba(11, 17, 24, 0)"
     } else {
         navBar.style.background = "rgba(11, 17, 24, 0.9)"
@@ -89,22 +107,22 @@ document.addEventListener("mousemove", (e) => {
     x = x - bodyBackground.offsetWidth
     y = y - bodyBackground.offsetHeight
 
-   
+
     if (e.target.classList.contains('pointer-link')) {
         // circle.style.transform = 'scale(3)';
         circle.style.display = "none"
-    } else if (!e.target.classList.contains('pointer-link') || (mediaQuery.matches)){
+    } else if (!e.target.classList.contains('pointer-link') || (mediaQuery.matches)) {
         circle.style.display = "initial"
-       
+
         // circle.style.transform = 'scale(1)'
     }
-   
+
 
     const mediaQuery = window.matchMedia('(max-width: 800px)')
     // Check if the media query is true
     if (mediaQuery.matches) {
-      // Then trigger an alert
-      circle.style.display = "none"
+        // Then trigger an alert
+        circle.style.display = "none"
     }
 
 
@@ -120,8 +138,8 @@ document.addEventListener("mousemove", (e) => {
 const mediaQuery = window.matchMedia('(min-width: 800px)')
 // Check if the media query is true
 if (mediaQuery.matches) {
-  // Then trigger an alert
-  circle.style.display = "none"
+    // Then trigger an alert
+    circle.style.display = "none"
 }
 
 
@@ -138,7 +156,7 @@ let indexText = 0
 const addLetter = () => {
     profileDescription.textContent += profileDescriptionText[indexText];
     indexText++;
-    
+
     if (indexText == profileDescriptionText.length) clearInterval(indexTyping);
 }
 
