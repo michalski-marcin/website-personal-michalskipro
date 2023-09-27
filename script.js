@@ -21,7 +21,7 @@ function showSection(idToShow) {
             sections[i].style = `left: 200%; opacity:0`;
         }
     }
-
+    document.getElementById(idToShow).style = `display: block`;
     setTimeout(function () { document.getElementById(idToShow).style = `left: 50%; opacity:1` }, 500)
 }
 
