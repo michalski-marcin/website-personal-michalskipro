@@ -563,9 +563,6 @@ h1 span {
     display: initial;
   }
 
-  .wrap {
-  }
-
   nav {
     position: absolute;
     background: rgba(11, 17, 24, 0.94);
@@ -582,8 +579,7 @@ h1 span {
 
   #menu-bar:checked ~ .navbar {
     right: 5%;
-    top: 90px;
-    backdrop-filter: blur(2px)
+    top: 100px;
   }
 
   .logo {
