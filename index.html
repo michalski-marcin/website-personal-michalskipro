@@ -21,38 +21,42 @@
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a class="menu-link target" href="#" onclick="showSection('introduction')"><span
-                                class="skills-about">></span>
+                    <li><a class="pointer-link target" href="#introduction"><span class="skills-about">></span>
                             about</a></li>
-                    <li><a class="menu-link target" href="#" onclick="showSection('skills')"><span
-                                class="skills-arrow">></span> skills</a>
+                    <li><a class="pointer-link target" href="#skills"><span class="skills-arrow">></span> skills</a>
                     </li>
-                    <li><a class="menu-link target" href="#" onclick="showSection('projects')"><span
-                                class="projects-arrow">></span>
+                    <li><a class="pointer-link target" href="#projects"><span class="projects-arrow">></span>
                             projects</a></li>
-                    <li><a class="menu-link target" href="#" onclick="showSection('contact')"><span
-                                class="contact-arrow">></span>
-                            contact</a></li>
+                    <li><a class="pointer-link target" href="#contact"><span class="contact-arrow">></span> contact</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
         <section id="introduction">
-            <div class="profile-upper">
-            <div class="profile">
-                        <p><span class="code-num">1</span>const <span class="code-different">frontendDev</span> = <span class="code-different">{</span></p>
-                        <p><span class="code-num">2</span>&nbsp;&nbsp;&nbsp;&nbsp;firstName: <span class="code-string">"Marcin"</span>,</p>
-                        <p><span class="code-num">3</span>&nbsp;&nbsp;&nbsp;&nbsp;lastName: <span class="code-string">&nbsp;"Michalski"</span>,</p>
-                        <p><span class="code-num">4</span>&nbsp;&nbsp;&nbsp;&nbsp;basedIn: <span class="code-string">&nbsp;&nbsp;"Wroclaw, Poland"</span>,</p>
-                        <p><span class="code-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;repositories: <a href="https://github.com/michalski-marcin">github.com</a>,</p>
-                        <p><span class="code-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;socials:      <a href="https://linkedin.com/in/michalski-marcin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linkedin.com</a></p>
+            <div class="intro-wrap">
+                <div class="profile-upper">
+                    <div class="profile-code">
+                        <p><span class="code-num">1</span>const <span class="code-different">frontendDev</span> = <span
+                                class="code-different">{</span></p>
+                        <p><span class="code-num">2</span>&nbsp;&nbsp;&nbsp;&nbsp;firstName: <span
+                                class="code-string">"Marcin"</span>,</p>
+                        <p><span class="code-num">3</span>&nbsp;&nbsp;&nbsp;&nbsp;lastName: <span
+                                class="code-string">&nbsp;"Michalski"</span>,</p>
+                        <p><span class="code-num">4</span>&nbsp;&nbsp;&nbsp;&nbsp;basedIn: <span
+                                class="code-string">&nbsp;&nbsp;"Wroclaw, PL"</span>,</p>
+                        <p><span class="code-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;repositories: <a class="pointer-link"
+                                href="https://github.com/michalski-marcin">github.com</a>,</p>
+                        <p><span class="code-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;socials: <a class="pointer-link"
+                                href="https://linkedin.com/in/michalski-marcin">linkedin.com</a></p>
                         <p><span class="code-num">7</span><span class="code-different">}</span>;</p>
-            </div>
-        </div>
-            <div class="profile-bottom">
-                <p class="description"></p>
-               
+                    </div>
+                </div>
+                <div class="profile-bottom">
+                    <p class="description"></p>
+
+                </div>
             </div>
         </section>
         <section id="skills">
@@ -61,9 +65,7 @@
         <section id="projects">proo</section>
         <section id="contact">contact</section>
     </main>
-    <footer>
 
-    </footer>
     <div class="circle"></div>
     <script src="script.js"></script>
 </body>

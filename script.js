@@ -3,27 +3,23 @@ const profileCodeNums = document.querySelector('.profile-code')
 const profileDescription = document.querySelector('.description')
 const contentArr = ["about", "skills", "projects", "contact"]
 const sections = document.querySelectorAll('section')
-const menuLink = document.querySelectorAll('.menu-link')
-const arrowLink = document.querySelectorAll('.menu-link span')
+const menuLink = document.querySelectorAll('.pointer-link')
+const arrowLink = document.querySelectorAll('.pointer-link span')
+const circle = document.querySelector('.circle')
+const navBar = document.querySelector("header");
 
+const offset = 130;
 
+window.addEventListener("scroll", () => {
+    if (window.scrollY <= offset){
+        navBar.style.background = "rgba(11, 17, 24, 0)"
+    } else {
+        navBar.style.background = "rgba(11, 17, 24, 0.9)"
+    }
+})
 
 arrowLink[0].style.transform = 'rotate(90deg)'
 menuLink[0].classList.add("active-link")
-
-
-
-
-function showSection(idToShow) {
-    let sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-        if (idToShow != sections[i].id) {
-            sections[i].style = `left: 200%; opacity:0`;
-        }
-    }
-    document.getElementById(idToShow).style = `display: block`;
-    setTimeout(function () { document.getElementById(idToShow).style = `left: 50%; opacity:1` }, 500)
-}
 
 menuLink.forEach((item) => {
     item.addEventListener("click", function (e) {
@@ -34,18 +30,12 @@ menuLink.forEach((item) => {
                 linkEffects(item)
 
                 if (menuLink[i].classList.contains("active-link")) {
-                    setTimeout(function () { arrowLink[i].style.transform = 'rotate(90deg)' }, 600)
+                    setTimeout(function () { arrowLink[i].style.transform = 'rotate(90deg)' }, 100)
                 }
             }
         }
     })
 })
-
-
-
-
-
-
 
 function linkEffects(e) {
 
@@ -55,6 +45,22 @@ function linkEffects(e) {
     e.classList.add("active-link")
     console.log(e.classList)
 }
+
+
+// SMOOTH SCROLL
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
 
 
 
@@ -73,7 +79,7 @@ const bodyBackground = document.querySelector('body')
 
 // }
 
-const circle = document.querySelector('.circle')
+
 document.addEventListener("mousemove", (e) => {
     const height = circle.offsetHeight;
     const width = circle.offsetWidth;
@@ -83,12 +89,22 @@ document.addEventListener("mousemove", (e) => {
     x = x - bodyBackground.offsetWidth
     y = y - bodyBackground.offsetHeight
 
-    if (e.target.classList.contains('target')) {
+   
+    if (e.target.classList.contains('pointer-link')) {
         // circle.style.transform = 'scale(3)';
-        circle.classList.add('big')
-    } else {
-        circle.classList.remove('big')
+        circle.style.display = "none"
+    } else if (!e.target.classList.contains('pointer-link') || (mediaQuery.matches)){
+        circle.style.display = "initial"
+       
         // circle.style.transform = 'scale(1)'
+    }
+   
+
+    const mediaQuery = window.matchMedia('(max-width: 800px)')
+    // Check if the media query is true
+    if (mediaQuery.matches) {
+      // Then trigger an alert
+      circle.style.display = "none"
     }
 
 
@@ -100,6 +116,13 @@ document.addEventListener("mousemove", (e) => {
 
 
 })
+
+const mediaQuery = window.matchMedia('(min-width: 800px)')
+// Check if the media query is true
+if (mediaQuery.matches) {
+  // Then trigger an alert
+  circle.style.display = "none"
+}
 
 
 
