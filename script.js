@@ -1,7 +1,6 @@
-const profileCodeText = document.querySelector('.profile-text')
-const profileCodeNums = document.querySelector('.profile-code')
+// VARIABLES
+
 const profileDescription = document.querySelector('.description')
-const contentArr = ["about", "skills", "projects", "contact"]
 const sections = document.querySelectorAll('section')
 const menuLink = document.querySelectorAll('.pointer-link')
 const arrowLink = document.querySelectorAll('.pointer-link span')
@@ -12,10 +11,12 @@ const hamburgerLine1 = document.querySelector('.line1')
 const hamburgerLine2 = document.querySelector('.line2')
 const hamburgerLine3 = document.querySelector('.line3')
 
+
+// HAMBURGER ANIMATION
+
 checkbox.addEventListener('change', function () {
 
     if (checkbox.checked) {
-        console.log(hamburgerLine1)
         hamburgerLine1.style.transform = "rotate(45deg)"
         hamburgerLine2.style.transform = "scaleY(0)"
         hamburgerLine3.style.transform = "rotate(-45deg)"
@@ -26,6 +27,9 @@ checkbox.addEventListener('change', function () {
     }
 })
 
+
+// NAVIGATION BAR BACKGROUND COLOR SCROLL OFFSET
+
 const offset = 130;
 
 window.addEventListener("scroll", () => {
@@ -35,6 +39,9 @@ window.addEventListener("scroll", () => {
         navBar.style.background = "rgba(11, 17, 24, 0.9)"
     }
 })
+
+
+// MENU ARROWS ANIMATION
 
 arrowLink[0].style.transform = 'rotate(90deg)'
 menuLink[0].classList.add("active-link")
@@ -78,24 +85,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-
-
-
-
-
-// RADIAL GRADIENT FOLLOWS CURSOR POSITION
+// RADIAL GRADIENT FOLLOWING CURSOR POSITION
 
 const gradientContainer = document.querySelector('.gradient-background')
 const bodyBackground = document.querySelector('body')
-// bodyBackground.onmousemove = function (e) {
-//     let x = e.pageX - gradientContainer.offsetLeft
-//     let y = e.pageY - gradientContainer.offsetTop
-
-//     x = x - bodyBackground.offsetWidth
-//     y = y - bodyBackground.offsetHeight
-//     gradientContainer.style.backgroundPosition = `${x}px ${y}px`
-
-// }
 
 
 document.addEventListener("mousemove", (e) => {
@@ -103,47 +96,29 @@ document.addEventListener("mousemove", (e) => {
     const width = circle.offsetWidth;
     let x = e.pageX - gradientContainer.offsetLeft
     let y = e.pageY - gradientContainer.offsetTop
-
     x = x - bodyBackground.offsetWidth
     y = y - bodyBackground.offsetHeight
-
-
-    if (e.target.classList.contains('pointer-link')) {
-        // circle.style.transform = 'scale(3)';
-        circle.style.display = "none"
-    } else if (!e.target.classList.contains('pointer-link') || (mediaQuery.matches)) {
-        circle.style.display = "initial"
-
-        // circle.style.transform = 'scale(1)'
-    }
-
-
-    const mediaQuery = window.matchMedia('(max-width: 800px)')
-    // Check if the media query is true
-    if (mediaQuery.matches) {
-        // Then trigger an alert
-        circle.style.display = "none"
-    }
-
 
     circle.style.left = `${e.pageX - width / 2 + 5}px`
     circle.style.top = `${e.pageY - height / 2 + 5}px`
     gradientContainer.style.backgroundPosition = `${x}px ${y}px`
 
+    // Set cursor pointer on hover
+    if (e.target.classList.contains('pointer-link')) {
+        circle.style.display = "none"
+    } else if (!e.target.classList.contains('pointer-link')) {
+        circle.style.display = "initial"
+    }
 
-
-
+    // Remove Circle cursor in less than 800px width
+    const mediaQuery = window.matchMedia('(max-width: 800px)')
+    if (mediaQuery.matches) {
+        circle.style.display = "none"
+    }
 })
 
-const mediaQuery = window.matchMedia('(min-width: 800px)')
-// Check if the media query is true
-if (mediaQuery.matches) {
-    // Then trigger an alert
-    circle.style.display = "none"
-}
 
-
-
+// TYPEWRITING ANIMATION
 
 const profileDescriptionText = `I'm passionate about programming and dedicated to crafting seamless user experiences through
 clean, efficient code and creative design solutions.
@@ -156,9 +131,7 @@ let indexText = 0
 const addLetter = () => {
     profileDescription.textContent += profileDescriptionText[indexText];
     indexText++;
-
     if (indexText == profileDescriptionText.length) clearInterval(indexTyping);
 }
-
 
 const indexTyping = setInterval(addLetter, 10);
