@@ -92,29 +92,21 @@ const bodyBackground = document.querySelector('body')
 
 
 document.addEventListener("mousemove", (e) => {
-    const height = circle.offsetHeight;
-    const width = circle.offsetWidth;
-    let x = e.pageX - gradientContainer.offsetLeft
-    let y = e.pageY - gradientContainer.offsetTop
-    x = x - bodyBackground.offsetWidth
-    y = y - bodyBackground.offsetHeight
-
-    circle.style.left = `${e.pageX - width / 2 + 5}px`
-    circle.style.top = `${e.pageY - height / 2 + 5}px`
-    gradientContainer.style.backgroundPosition = `${x}px ${y}px`
-
-    // Set cursor pointer on hover
-    if (e.target.classList.contains('pointer-link')) {
-        circle.style.display = "none"
-    } else if (!e.target.classList.contains('pointer-link')) {
-        circle.style.display = "initial"
-    }
-
-    // Remove Circle cursor in less than 800px width
-    const mediaQuery = window.matchMedia('(max-width: 800px)')
-    if (mediaQuery.matches) {
-        circle.style.display = "none"
-    }
+    const height = gradientContainer.offsetHeight;
+    const width = gradientContainer.offsetWidth;
+    
+    // let x = e.pageX - gradientContainer.offsetLeft
+    // let y = e.pageY - gradientContainer.offsetTop
+    // x = x - bodyBackground.offsetWidth
+    // y = y - bodyBackground.offsetHeight
+    setTimeout(() => {
+        gradientContainer.style.left = `${e.pageX - width / 2}px`
+        gradientContainer.style.top = `${e.pageY - height / 2}px`
+    }, 100);
+   
+    
+   
+        
 })
 
 
