@@ -102,7 +102,7 @@ document.addEventListener("mousemove", (e) => {
     setTimeout(() => {
         gradientContainer.style.left = `${e.pageX - width / 2}px`
         gradientContainer.style.top = `${e.pageY - height / 2}px`
-    }, 100);
+    }, 50);
    
     
    
