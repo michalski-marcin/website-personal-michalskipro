@@ -11,6 +11,10 @@ const hamburgerLine1 = document.querySelector('.line1')
 const hamburgerLine2 = document.querySelector('.line2')
 const hamburgerLine3 = document.querySelector('.line3')
 
+window.onscroll = function () {
+    window.scrollLeft = 0;
+  }
+
 
 // HAMBURGER ANIMATION
 
@@ -88,13 +92,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // RADIAL GRADIENT FOLLOWING CURSOR POSITION
 
 const gradientContainer = document.querySelector('.gradient-background')
+const cursorContainer = document.querySelector('.cursor-background')
 const bodyBackground = document.querySelector('body')
 
 
 document.addEventListener("mousemove", (e) => {
     const height = gradientContainer.offsetHeight;
     const width = gradientContainer.offsetWidth;
-    
+
+
     // let x = e.pageX - gradientContainer.offsetLeft
     // let y = e.pageY - gradientContainer.offsetTop
     // x = x - bodyBackground.offsetWidth
