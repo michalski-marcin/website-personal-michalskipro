@@ -11,11 +11,12 @@ const hamburgerLine1 = document.querySelector('.line1')
 const hamburgerLine2 = document.querySelector('.line2')
 const hamburgerLine3 = document.querySelector('.line3')
 
+
+
+
 window.onscroll = function () {
     window.scrollLeft = 0;
-  }
-
-
+}
 // HAMBURGER ANIMATION
 
 checkbox.addEventListener('change', function () {
@@ -92,15 +93,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // RADIAL GRADIENT FOLLOWING CURSOR POSITION
 
 const gradientContainer = document.querySelector('.gradient-background')
-const cursorContainer = document.querySelector('.cursor-background')
 const bodyBackground = document.querySelector('body')
 
 
 document.addEventListener("mousemove", (e) => {
     const height = gradientContainer.offsetHeight;
     const width = gradientContainer.offsetWidth;
-
-
+    const circleHeight = circle.offsetHeight;
+    const circleWidth = circle.offsetWidth;
+    circle.style.left = `${e.pageX - circleWidth / 2 + 8}px`
+    circle.style.top = `${e.pageY - circleHeight / 2}px`
     // let x = e.pageX - gradientContainer.offsetLeft
     // let y = e.pageY - gradientContainer.offsetTop
     // x = x - bodyBackground.offsetWidth
@@ -109,20 +111,15 @@ document.addEventListener("mousemove", (e) => {
         gradientContainer.style.left = `${e.pageX - width / 2}px`
         gradientContainer.style.top = `${e.pageY - height / 2}px`
     }, 50);
-   
-    
-   
-        
 })
+
+// FADEIN ANIMATION
+
 
 
 // TYPEWRITING ANIMATION
 
-const profileDescriptionText = `I'm passionate about programming and dedicated to crafting seamless user experiences through
-clean, efficient code and creative design solutions.
-I look forward to the opportunity to collaborate on projects that not only meet but exceed
-expectations, delivering experiences that leave a lasting impression on users. Let's bring your
-ideas to life, together.
+const profileDescriptionText = `
 `
 
 let indexText = 0
@@ -133,3 +130,18 @@ const addLetter = () => {
 }
 
 const indexTyping = setInterval(addLetter, 10);
+
+
+
+const observer = new IntersectionObserver((entries) => {
+     entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show'); 
+        }
+     });
+});
+const techElements = document.querySelectorAll('.tech-element')
+const projectElements = document.querySelectorAll('.project-container');
+projectElements.forEach((el) => observer.observe(el));
+
+techElements.forEach((el) => observer.observe(el));
