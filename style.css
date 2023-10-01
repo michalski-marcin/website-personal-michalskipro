@@ -54,11 +54,12 @@ body {
 
 .gradient-background {
   position: absolute;
-  height: 400vh;
-  width: 250%;
-  background-image: radial-gradient(30% 20%, #0e161e, var(--cr1));
-  background-repeat: no-repeat;
+  height: 1000px;
+  width: 1500px;
+  border-radius: 50%;
+  background-image: radial-gradient(50% 50%, #0e161e, var(--cr1));
   overflow-x: hidden;
+  z-index: -1;
 }
 
 /* .gradient-background {
@@ -322,6 +323,8 @@ h4 {
   opacity: 0;
 }
 
+
+
 .tech-element:hover {
   background-color: #142a3f;
   color: var(--cr6);
@@ -343,6 +346,11 @@ h4 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
+}
+
+.tech-element .learning {
+  top: -5px;
+  color: var(--cr3);
 }
 
 .tech-bottom {
@@ -401,7 +409,7 @@ h4 {
 }
 
 .skill-in-progress {
-  opacity: 0;
+  display: none;
 }
 
 /* PROJECTS SECTION */
@@ -789,6 +797,10 @@ h4 {
      transform: translateX(0);
   }
 }
+
+
+
+
 
 .project-container:nth-child(1) { animation-delay: .3s }
 .project-container:nth-child(2) { animation-delay: .6s }

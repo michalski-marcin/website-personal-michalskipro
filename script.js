@@ -10,13 +10,10 @@ const checkbox = document.getElementById('menu-bar')
 const hamburgerLine1 = document.querySelector('.line1')
 const hamburgerLine2 = document.querySelector('.line2')
 const hamburgerLine3 = document.querySelector('.line3')
+const skillDimmed = document.querySelector('.show')
 
 
 
-
-window.onscroll = function () {
-    window.scrollLeft = 0;
-}
 // HAMBURGER ANIMATION
 
 checkbox.addEventListener('change', function () {
@@ -93,8 +90,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // RADIAL GRADIENT FOLLOWING CURSOR POSITION
 
 const gradientContainer = document.querySelector('.gradient-background')
-const bodyBackground = document.querySelector('body')
+const bodyElement = document.querySelector('body')
 
+
+
+const bodyBackground = document.querySelector('body')
+// bodyElement.addEventListener('mousemove', e => {
+//     let rect = e.target.getBoundingClientRect();
+//     let x = e.clientX - rect.left;
+//     let y = e.clientY - rect.top;
+//     gradientContainer.style.left = `${x}`;
+//     gradientContainer.style.top = `${y}`;
+//   });
 
 document.addEventListener("mousemove", (e) => {
     const height = gradientContainer.offsetHeight;
@@ -110,7 +117,7 @@ document.addEventListener("mousemove", (e) => {
     setTimeout(() => {
         gradientContainer.style.left = `${e.pageX - width / 2}px`
         gradientContainer.style.top = `${e.pageY - height / 2}px`
-    }, 50);
+    }, 150);
 })
 
 // FADEIN ANIMATION
@@ -145,3 +152,5 @@ const projectElements = document.querySelectorAll('.project-container');
 projectElements.forEach((el) => observer.observe(el));
 
 techElements.forEach((el) => observer.observe(el));
+
+
