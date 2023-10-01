@@ -58,7 +58,7 @@ body {
   width: 250%;
   background-image: radial-gradient(30% 20%, #0e161e, var(--cr1));
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* .gradient-background {
@@ -173,6 +173,7 @@ main {
   /* max-width: 1280px; */
   padding-top: 140px;
   position: relative;
+  overflow-x: hidden;
 }
 
 section {
