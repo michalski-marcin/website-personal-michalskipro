@@ -16,17 +16,25 @@ const skillDimmed = document.querySelector('.show')
 
 // HAMBURGER ANIMATION
 
-checkbox.addEventListener('change', function () {
+checkbox.addEventListener('change', checkHamburger)
 
+function checkHamburger() {
     if (checkbox.checked) {
         hamburgerLine1.style.transform = "rotate(45deg)"
-        hamburgerLine2.style.transform = "scaleY(0)"
+        hamburgerLine2.style.transform = "translateX(100px)"
         hamburgerLine3.style.transform = "rotate(-45deg)"
     } else {
         hamburgerLine1.style.transform = "rotate(0deg)"
-        hamburgerLine2.style.transform = "scaleY(1)"
+        hamburgerLine2.style.transform = "translateX(-3px)"
         hamburgerLine3.style.transform = "rotate(0deg)"
     }
+}
+
+
+
+document.addEventListener('scroll', (event) => {
+    checkbox.checked = false;
+    checkHamburger();
 })
 
 
@@ -108,19 +116,21 @@ document.addEventListener("mousemove", (e) => {
     const width = gradientContainer.offsetWidth;
     const circleHeight = circle.offsetHeight;
     const circleWidth = circle.offsetWidth;
-    circle.style.left = `${e.pageX - circleWidth / 2 + 8}px`
-    circle.style.top = `${e.pageY - circleHeight / 2}px`
+    
     // let x = e.pageX - gradientContainer.offsetLeft
     // let y = e.pageY - gradientContainer.offsetTop
     // x = x - bodyBackground.offsetWidth
     // y = y - bodyBackground.offsetHeight
     setTimeout(() => {
+        circle.style.left = `${e.pageX - circleWidth / 2}px`
+        circle.style.top = `${e.pageY - circleHeight / 2}px`
+    }, 75);
+    setTimeout(() => {
         gradientContainer.style.left = `${e.pageX - width / 2}px`
         gradientContainer.style.top = `${e.pageY - height / 2}px`
     }, 150);
-})
 
-// FADEIN ANIMATION
+})
 
 
 
@@ -139,6 +149,8 @@ const addLetter = () => {
 const indexTyping = setInterval(addLetter, 10);
 
 
+
+// Fade IN ANIMATIONS
 
 const observer = new IntersectionObserver((entries) => {
      entries.forEach((entry) => {

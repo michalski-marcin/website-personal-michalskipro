@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;600&display=swap");
 
 :root {
@@ -15,7 +15,8 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  cursor: none;
+  font-family:  "Fira Code", monospace;
+  /* cursor: none; */
 }
 
 body {
@@ -23,7 +24,7 @@ body {
   background: var(--cr1);
   background-attachment: fixed;
   color: var(--cr6);
-  font-family: "source code", "Fira Code", monospace;
+  font-family:  "Fira Code", monospace;
   width: 100%;
   overflow-y: hidden;
   /* height: 400vh; */
@@ -40,16 +41,19 @@ body {
 .circle {
   
   position: absolute;
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
   border: 1px solid var(--cr2);
-  box-shadow: 0px 0.7px 15px var(--cr2);
+  box-shadow: 0px 0.7px 10px 3px var(--cr2);
   animation: rotation 2s linear infinite;
   background: var(--cr2);
   touch-action: none;
-  /* z-index: 9999; */
+  transition: ease;
+  z-index: -1;
+  
 }
+
  
 
 .gradient-background {
@@ -57,9 +61,10 @@ body {
   height: 1000px;
   width: 1500px;
   border-radius: 50%;
-  background-image: radial-gradient(50% 50%, #0e161e, var(--cr1));
+  background-image: radial-gradient(50% 50%, #131f2a, var(--cr1));
   overflow-x: hidden;
   z-index: -1;
+  transition: ease;
 }
 
 /* .gradient-background {
@@ -87,6 +92,10 @@ header {
   backdrop-filter: blur(4px);
   z-index: 99;
   transition: 0.3s;
+}
+
+.hamburger-social-icons {
+  display: none;
 }
 
 .logo {
@@ -201,7 +210,10 @@ section {
 
 #contact {
   margin-top: 220px;
+  height: 100vh;
 }
+
+
 
 /* ABOUT SECTION */
 
@@ -219,18 +231,17 @@ section {
 }
 
 .profile-code a {
-  color: var(--cr3);
+  color: var(--cr2);
   transition: 0.3s;
 }
 
 .profile-code a:hover {
   cursor: pointer;
-  color: var(--cr5);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 8px rgba(202, 253, 54, 0.9);
 }
 
 .code-string {
-  color: var(--cr2);
+  color: var(--cr3);
 }
 
 .code-different {
@@ -265,9 +276,9 @@ section {
   margin-top: 85px;
 }
 
-#skills {
-  padding-top: 50pb x;
-}
+/* #skills {
+  padding-top: 50px;
+} */
 
 .section-wrap-radialbg {
   /* min-height: 100vh; */
@@ -310,7 +321,7 @@ h4 {
   min-width: 110px;
   height: 150px;
   position: relative;
-  background: #0d1a27;
+  background-image: linear-gradient(320deg , #0f171f, var(--cr1));
   color: #0d1a27;
   display: flex;
   flex-direction: column;
@@ -323,12 +334,32 @@ h4 {
   opacity: 0;
 }
 
+.tech-element::after {
+  content: "";
+  background: #11222d;
+                    
+  /* min-width: 110px; */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  border-radius: 5px;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.tech-element:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 
 .tech-element:hover {
   background-color: #142a3f;
   color: var(--cr6);
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
 .tech-element img {
@@ -337,12 +368,12 @@ h4 {
   transition-delay: 0.1s;
 }
 .tech-element:hover img {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .tech-element p {
   position: absolute;
-  bottom: 5px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
@@ -394,15 +425,15 @@ h4 {
   font-size: 14px;
 }
 
-.tool .tech-element:hover,
-.backend .tech-element:hover {
-  transform: scale(1.05);
-}
+/* .tool.tech-element:hover,
+.backend.tech-element:hover {
+  transform: scale(2);
+} */
 
-.tool .tech-element:hover img,
+/* .tool .tech-element:hover img,
 .backend .tech-element:hover img {
-  transform: scale(1.1);
-}
+  transform: scale(1.2);
+} */
 
 .figma img {
   height: 40px;
@@ -437,8 +468,8 @@ h4 {
 }
 
 .project-container {
-  position: absolute;
   background: #0d1a27;
+  background-image: linear-gradient(320deg , #0f171f, var(--cr1));
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -447,28 +478,56 @@ h4 {
   margin-bottom: 20px;
   position: relative;
   border-radius: 15px;
-  overflow: hidden;
+  opacity: 0;
+  /* overflow: hidden; */
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
+}
 
+.project-container::after {
+  content: "";
+  background: #11222d;
+                    
+  min-width: 110px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  
+  opacity: 0;
+  border-radius: 15px;
+  transition: 0.25s;
+  z-index: -1;
+}
+
+.project-container:hover::after {
+  opacity: 1;
+  transform: scale(1.07);
+  box-shadow: 1px 7px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-container:hover {
   transform: scale(1.05);
-  background: #142a3f;
+  background: #11222d;
 }
+
+.project-container:hover .project-img img{
+  transform: scale(1.2);
+  border-radius: 10px;
+}
+
+
 
 .project-img {
   height: 180px;
   overflow: hidden;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project-img img {
   width: 100%;
   border-radius: 10px;
+  transition: 0.4s;
 }
 
 .project-text {
@@ -529,6 +588,108 @@ h4 {
 #contact .section-head {
   top: -70px;
 }
+
+
+
+p.contact-linked {
+  margin-top: 20px;
+}
+
+#contact a {
+  color: var(--cr2);
+  transition: 0.3s;
+}
+
+#contact a:hover {
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(202, 253, 54, 0.9);
+}
+
+
+
+.contact-flex {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 100px;
+  
+}
+
+.contact-form p {
+ font-size: 20px;
+
+}
+
+.message-form {
+  font-size: 28px;
+}
+
+.message-form div {
+  padding: 10px 0;
+}
+
+.form-element {
+  position: relative;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: 2px #142a3f solid;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  padding: 5px 12px;
+  outline: none;
+  color: var(--cr6);
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--cr4);
+}
+
+
+textarea {
+  height: 200px;
+  resize: none;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+
+.form-element label {
+  position: absolute;
+  left: 10px;
+  top: -2px;
+  background: #142a3f;
+  color: var(--cr2);
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+form button {
+  width: 300px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #142a3f;
+  color: var(--cr2);
+  border-radius: 5px;
+  padding: 10px;
+  transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+button:hover {
+  background: var(--cr2);
+  border-color: var(--cr2);
+  color: var(--cr1);
+  font-weight: 500;
+  
+}
+
+
+
 
 /* MEDIA QUERRIES FOR MOBILE DEVICES */
 
@@ -606,16 +767,18 @@ h4 {
 
   .hamburger-lines .line1 {
     transform-origin: 0% 0%;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.2s;
   }
 
   .hamburger-lines .line2 {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.7s ease-in-out;
   }
 
   .hamburger-lines .line3 {
     transform-origin: 0% 100%;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.2s;
   }
 
   header label {
@@ -632,9 +795,22 @@ h4 {
     top: 110vh;
     padding: 23px;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: 0.6s ease;
+    transition: 1s ease;
     font-size: 23px;
   }
+
+  .hamburger-social-icons {
+    display: inline-block;
+  }
+
+  .hamburger-social-icons img{
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  
+
+
 
   #menu-bar:checked ~ .navbar {
     right: 5%;
@@ -680,6 +856,13 @@ h4 {
     align-items: center;
     width: 100%;
     justify-content: center;
+  }
+
+  .contact-flex {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* justify-content: center; */
   }
 }
 
@@ -762,9 +945,7 @@ h4 {
   animation-fill-mode: forwards;
 }
 
-.project-container{
-  opacity: 0;
-}
+
 
 .project-container.show {
   animation: project-fade-in 2s;
@@ -802,7 +983,7 @@ h4 {
 
 
 
-.project-container:nth-child(1) { animation-delay: .3s }
+ .project-container:nth-child(1) { animation-delay: .3s }
 .project-container:nth-child(2) { animation-delay: .6s }
 .project-container:nth-child(3) { animation-delay: .9s }
 
