@@ -5,11 +5,12 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZJ3B2MEW"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-DZZJ3B2MEW');
+        (function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-DZZJ3B2MEW');
+        })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,9 +21,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <header>
         <div class="wrap">
             <div class="logo"><img src="pics/logo.svg" alt="logo">
@@ -36,21 +35,19 @@
                     <span class="line line3"></span>
                 </div>
             </label>
-
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a class="pointer-link target" href="#introduction"><span class="skills-about">></span>
-                            about</a></li>
-                    <li><a class="pointer-link target" href="#skills"><span class="skills-arrow">></span> skills</a>
-                    </li>
-                    <li><a class="pointer-link target" href="#projects"><span class="projects-arrow">></span>
-                            projects</a></li>
-                    <li><a class="pointer-link target" href="#contact"><span class="contact-arrow">></span> contact</a>
-                    </li>
-                    <li><a class="hamburger-social-icons" href="https://github.com/michalski-marcin"
-                            target=”_blank”><img src="pics/githubicon.svg" alt=""></a><a class="hamburger-social-icons"
-                            href="https://linkedin.com/in/michalski-marcin" target=”_blank”><img
-                                src="pics/linkedinicon.svg" alt=""></a>
+                    <li><a class="pointer-link target" href="#introduction"><span class="skills-about">></span> about</a></li>
+                    <li><a class="pointer-link target" href="#skills"><span class="skills-arrow">></span> skills</a></li>
+                    <li><a class="pointer-link target" href="#projects"><span class="projects-arrow">></span> projects</a></li>
+                    <li><a class="pointer-link target" href="#contact"><span class="contact-arrow">></span> contact</a></li>
+                    <li>
+                        <a class="hamburger-social-icons" href="https://github.com/michalski-marcin" target="_blank">
+                            <img src="pics/githubicon.svg" alt="">
+                        </a>
+                        <a class="hamburger-social-icons" href="https://linkedin.com/in/michalski-marcin" target="_blank">
+                            <img src="pics/linkedinicon.svg" alt="">
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -87,7 +84,6 @@
                         I look forward to the opportunity to collaborate on projects that not only meet but exceed
                         expectations, delivering experiences that leave a lasting impression on users. Let's bring your
                         ideas to life, together.</p>
-
                 </div>
             </div>
         </section>
@@ -126,7 +122,6 @@
                     </div>
                 </div>
                 <div class="tech-bottom">
-
                     <div class="backend stack">
                         <div class="header">
                             <h4 class="middle-skill-header">backend</h4>
@@ -173,7 +168,6 @@
                 </div>
             </div>
             </div>
-
         </section>
         <section id="projects">
             <div class="section-wrap-radialbg">
@@ -189,9 +183,6 @@
                             <p>Project based on design delivered in Figma for a group associated with the crypto
                                 industry
                             </p>
-                            <p>
-
-                            </p>
                         </div>
                         <div class="project-footer">
                             <p><a href="https://artificialai.xyz" target=”_blank”><img src="pics/webicon.svg"
@@ -200,7 +191,6 @@
                                         src="pics/githubicon.svg" alt="">github pages</a>
                             </p>
                         </div>
-
                     </div>
                     <div class="project-container">
                         <div class="project-img">
@@ -211,9 +201,6 @@
                             <h4>chrome extension</h4>
                             <!-- <img src="pics/htmlicon.svg" alt=""><img src="pics/cssicon.svg" alt=""><img src="pics/jsicon.svg" alt=""> -->
                             <p>A quick way to bookmark the currently viewed page along with a comment and custom title.
-                            </p>
-                            <p>
-
                             </p>
                         </div>
                         <div class="project-footer">
@@ -232,12 +219,8 @@
                             <h4>app</h4>
                             <p>Simple safe random password generator app with customizable options
                             </p>
-                            <p>
-
-                            </p>
                         </div>
                         <div class="project-footer">
-
                             <p> <a href="https://michalski-marcin.github.io/js-password-generator/" target=”_blank”><img
                                         src="pics/webicon.svg" alt="">web</a>
                                 <a href="https://github.com/michalski-marcin/js-password-generator" target=”_blank”><img
@@ -245,7 +228,6 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -260,7 +242,6 @@
                             in the creative process, and I'm here to bring them to life.
                             <p><a href="mailto:marcin@michalski.pro">marcin@michalski.pro</a></p>
                         </div>
-
                     </div>
                     <div class="contact-form">
                         <p>Send me a message!</p>
@@ -268,7 +249,6 @@
                             action="https://formsubmit.co/3dfb84e577aa833742e8571049964d24" method="POST">
                             <div class="form-element">
                                 <input placeholder="// name" id="form-name" type="text" name="name" required>
-
                             </div>
                             <div class="form-element">
                                 <input placeholder="// email" id="form-mail" type="email" name="email" required>
@@ -276,7 +256,6 @@
                             <div class="form-element">
                                 <textarea placeholder="// your message" maxlength="340" id="form-message"
                                     type="textarea" name="message" required></textarea>
-
                             </div>
                             <button type="submit">Send</button>
                         </form>
@@ -289,5 +268,4 @@
     <div class="circle"></div>
     <script src="script.js"></script>
 </body>
-
 </html>

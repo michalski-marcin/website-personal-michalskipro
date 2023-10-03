@@ -20,11 +20,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* cursor: none; */
 }
 
 body {
-  /* background: radial-gradient(80% 70% at 100px 20px, #0c1a28, var(--cr1)); */
   background: var(--cr1);
   background-attachment: fixed;
   color: var(--cr6);
@@ -558,7 +556,7 @@ h4 {
 /* CONTACT SECTION */
 
 #contact .section-head {
-  top: -70px;
+  top: -30px;
 }
 
 p.contact-linked {
