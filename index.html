@@ -5,12 +5,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZJ3B2MEW"></script>
     <script>
-        (function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-DZZJ3B2MEW');
-        })();
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DZZJ3B2MEW');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +20,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="wrap">
@@ -37,15 +37,20 @@
             </label>
             <nav class="navbar">
                 <ul class="menu-list">
-                    <li><a class="pointer-link target" href="#introduction"><span class="skills-about">></span> about</a></li>
-                    <li><a class="pointer-link target" href="#skills"><span class="skills-arrow">></span> skills</a></li>
-                    <li><a class="pointer-link target" href="#projects"><span class="projects-arrow">></span> projects</a></li>
-                    <li><a class="pointer-link target" href="#contact"><span class="contact-arrow">></span> contact</a></li>
+                    <li><a class="pointer-link target" href="#introduction"><span class="skills-about">></span>
+                            about</a></li>
+                    <li><a class="pointer-link target" href="#skills"><span class="skills-arrow">></span> skills</a>
+                    </li>
+                    <li><a class="pointer-link target" href="#projects"><span class="projects-arrow">></span>
+                            projects</a></li>
+                    <li><a class="pointer-link target" href="#contact"><span class="contact-arrow">></span> contact</a>
+                    </li>
                     <li>
                         <a class="hamburger-social-icons" href="https://github.com/michalski-marcin" target="_blank">
                             <img src="pics/githubicon.svg" alt="">
                         </a>
-                        <a class="hamburger-social-icons" href="https://linkedin.com/in/michalski-marcin" target="_blank">
+                        <a class="hamburger-social-icons" href="https://linkedin.com/in/michalski-marcin"
+                            target="_blank">
                             <img src="pics/linkedinicon.svg" alt="">
                         </a>
                     </li>
@@ -268,4 +273,5 @@
     <div class="circle"></div>
     <script src="script.js"></script>
 </body>
+
 </html>
