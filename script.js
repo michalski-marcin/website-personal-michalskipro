@@ -78,7 +78,7 @@ function linkEffects(e) {
         menuLink[i].classList.remove("active-link")
     }
     e.classList.add("active-link")
-    console.log(e.classList)
+
 }
 
 
@@ -98,29 +98,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // RADIAL GRADIENT FOLLOWING CURSOR POSITION
 
 const gradientContainer = document.querySelector('.gradient-background')
-const bodyElement = document.querySelector('body')
-
-
-
-const bodyBackground = document.querySelector('body')
-// bodyElement.addEventListener('mousemove', e => {
-//     let rect = e.target.getBoundingClientRect();
-//     let x = e.clientX - rect.left;
-//     let y = e.clientY - rect.top;
-//     gradientContainer.style.left = `${x}`;
-//     gradientContainer.style.top = `${y}`;
-//   });
 
 document.addEventListener("mousemove", (e) => {
     const height = gradientContainer.offsetHeight;
     const width = gradientContainer.offsetWidth;
     const circleHeight = circle.offsetHeight;
     const circleWidth = circle.offsetWidth;
-    
-    // let x = e.pageX - gradientContainer.offsetLeft
-    // let y = e.pageY - gradientContainer.offsetTop
-    // x = x - bodyBackground.offsetWidth
-    // y = y - bodyBackground.offsetHeight
+
     setTimeout(() => {
         circle.style.left = `${e.pageX - circleWidth / 2}px`
         circle.style.top = `${e.pageY - circleHeight / 2}px`
@@ -153,11 +137,11 @@ const indexTyping = setInterval(addLetter, 10);
 // Fade IN ANIMATIONS
 
 const observer = new IntersectionObserver((entries) => {
-     entries.forEach((entry) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show'); 
+            entry.target.classList.add('show');
         }
-     });
+    });
 });
 const techElements = document.querySelectorAll('.tech-element')
 const projectElements = document.querySelectorAll('.project-container');
