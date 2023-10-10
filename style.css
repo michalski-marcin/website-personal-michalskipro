@@ -253,6 +253,15 @@ section {
   font-size: 19px;
 }
 
+.resume-arrow {
+  transition: 0.1s;
+  display: inline-block;
+}
+
+.resume a:hover .resume-arrow {
+  transform: rotate(180deg) scale(1.4);
+}
+
 /* SKILLS SECTION */
 #skills .section-head {
   top: -60px;
@@ -559,6 +568,19 @@ h4 {
   top: -30px;
 }
 
+.form-container {
+  background-image: linear-gradient(320deg, #0f171f, var(--cr1));
+  padding: 20px 15px;
+  min-width: 310px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.form-container:hover {
+  transform: scale(1.05);
+  background: #11222d;
+}
+
 p.contact-linked {
   margin-top: 20px;
 }
@@ -619,7 +641,7 @@ p.contact-linked {
 input,
 textarea {
   background: transparent;
-  border: 2px #142a3f solid;
+  border: 2px #2a3739 solid;
   /* border-radius: 10px; */
   width: 300px;
   height: 50px;
