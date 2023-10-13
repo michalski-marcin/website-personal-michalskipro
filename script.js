@@ -171,11 +171,12 @@ const tiltEffectSettings = {
   
   const card = document.querySelector(".card");
 
-  const mediaQuery = window.matchMedia('(max-width: 370px)')
+  const mediaQuery = window.matchMedia('(max-width: 400px)')
   if (mediaQuery.matches) {
-    tiltEffectSettings.scale = 1
+    tiltEffectSettings.scale = 0.9
+    max = 0
   }
-console.log(tiltEffectSettings.scale)
+
 
   card.addEventListener("mouseenter", cardMouseEnter);
   card.addEventListener("mousemove", cardMouseMove);
