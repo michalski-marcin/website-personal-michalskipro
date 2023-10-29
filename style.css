@@ -86,6 +86,7 @@ header {
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--cr2);
+  text-shadow: 0 0 8px rgba(202, 253, 54, 0.5);
 }
 
 .logo span {
