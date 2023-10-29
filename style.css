@@ -7,6 +7,7 @@
   --cr4: #fc286c;
   --cr5: #ebebeb;
   --cr6: #b4dadf;
+  --cr7: #64858b;
 }
 
 * {
@@ -26,7 +27,6 @@ body {
   background: var(--cr1);
   background-attachment: fixed;
   color: var(--cr6);
-  font-family: "Fira Code", monospace;
   width: 100%;
   overflow-y: hidden;
 }
@@ -79,11 +79,19 @@ header {
   display: none;
 }
 
-.logo {
+.logo p{
   display: flex;
   align-items: center;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 600;
   letter-spacing: 1px;
+  color: var(--cr2);
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--cr6);
 }
 
 .logo img {
@@ -197,7 +205,7 @@ section {
   margin-top: 60px;
   letter-spacing: 1px;
   line-height: 2rem;
-  color: var(--cr6);
+  color: var(--cr7);
   font-size: 22px;
 }
 
@@ -235,7 +243,7 @@ section {
   line-height: 1.7rem;
   letter-spacing: 1px;
   font-size: 18px;
-  color: #80b1b6;
+  color: var(--cr7);
 }
 
 .resume {
@@ -510,7 +518,7 @@ h4 {
 .project-text {
   padding: 15px;
   transition: 0.3s;
-  color: #455c60;
+  color: var(--cr7)
 }
 
 .project-text h3 {
@@ -638,7 +646,7 @@ p.contact-linked {
   line-height: 1.7rem;
   letter-spacing: 1px;
   font-size: 18px;
-  color: #80b1b6;
+  color: var(--cr7)
 }
 
 .contact-form p {
@@ -798,7 +806,7 @@ button:hover {
     width: 32px;
     position: absolute;
     top: 25px;
-    right: 25px;
+    right: 55px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -809,7 +817,7 @@ button:hover {
     display: block;
     height: 4px;
     width: 100%;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     background: var(--cr2);
   }
 
@@ -852,6 +860,8 @@ button:hover {
     display: inline-block;
   }
 
+
+
   .hamburger-social-icons img {
     height: 30px;
     padding: 0 10px;
@@ -871,6 +881,7 @@ button:hover {
     text-align: center;
     padding: 15px;
   }
+
 
   .profile-upper {
     font-size: 20px;
@@ -906,9 +917,9 @@ button:hover {
 /* MEDIA QUERRY 490PX */
 
 @media screen and (max-width: 490px) {
-  .logo p {
+  /* .logo p {
     display: none;
-  }
+  } */
 
   .wrap {
     padding: 25px;
@@ -970,18 +981,18 @@ button:hover {
 }
 
 .tech-element.show {
-  animation: fade-in 1.1s;
+  animation: fade-in 0.7s;
   animation-fill-mode: forwards;
 }
 
 .project-container.show {
-  animation: project-fade-in 2s;
+  animation: project-fade-in 1s;
   animation-fill-mode: forwards;
 }
 
 .contact-flex.show {
   
-  animation: fade-in-bottom 1.7s ease;
+  animation: fade-in-bottom 1.2s ease;
   animation-fill-mode: forwards;
 }
 
@@ -999,13 +1010,11 @@ button:hover {
 
 @keyframes fade-in {
   from {
-    -webkit-transform: scale(1.4);
     opacity: 0;
-    transform: translateX(400px);
+    transform: translateX(250px);
   }
 
   to {
-    -webkit-transform: scale(1);
     opacity: 1;
     transform: translateX(0);
   }
@@ -1034,22 +1043,22 @@ button:hover {
 }
 
 .tech-element.show:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: 0.55s;
 }
 .tech-element.show:nth-child(2) {
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
 }
 .tech-element.show:nth-child(3) {
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
 }
 .tech-element.show:nth-child(4) {
-  animation-delay: 0.7s;
+  animation-delay: 0.1s;
 }
 .tech-element.show:nth-child(5) {
-  animation-delay: 0.9s;
+  animation-delay: 0.15s;
 }
 .tech-element.show:nth-child(6) {
-  animation-delay: 1.1s;
+  animation-delay: 0s;
 }
 .tech-element.show:nth-child(7) {
   animation-delay: 1.3s;
