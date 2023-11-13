@@ -1,4 +1,3 @@
-// VARIABLES
 
 const profileDescription = document.querySelector('.description')
 const sections = document.querySelectorAll('section')
@@ -105,14 +104,26 @@ document.addEventListener("mousemove", (e) => {
     const circleHeight = circle.offsetHeight;
     const circleWidth = circle.offsetWidth;
 
-    setTimeout(() => {
-        circle.style.left = `${e.pageX - circleWidth / 2}px`
-        circle.style.top = `${e.pageY - circleHeight / 2}px`
-    }, 75);
-    setTimeout(() => {
-        gradientContainer.style.left = `${e.pageX - width / 2}px`
-        gradientContainer.style.top = `${e.pageY - height / 2}px`
-    }, 150);
+    circle.style.left = `${e.pageX - circleWidth / 2}px`
+    circle.style.top = `${e.pageY - circleHeight / 2}px`
+
+    gradientContainer.style.left = `${e.pageX - width / 2}px`
+    gradientContainer.style.top = `${e.pageY - height / 2}px`
+
+    if (e.target.classList.contains('target')) {
+        circle.style.transform = 'scale(3)';
+        circle.classList.add('big')
+    } else {
+        circle.classList.remove('big')
+        circle.style.transform = 'scale(1)'
+    }
+    // setTimeout(() => {
+    //     circle.style.left = `${e.pageX - circleWidth / 2}px`
+    //     circle.style.top = `${e.pageY - circleHeight / 2}px`
+    // }, 75);
+    // setTimeout(() => {
+
+    // }, 150);
 
 })
 
@@ -167,53 +178,53 @@ const tiltEffectSettings = {
     scale: 1.1,
     speed: 1500,
     easing: "cubic-bezier(.03,.98,.52,.99)"
-  };
-  
-  const card = document.querySelector(".card");
+};
 
-  const mediaQuery = window.matchMedia('(max-width: 400px)')
-  if (mediaQuery.matches) {
+const card = document.querySelector(".card");
+
+const mediaQuery = window.matchMedia('(max-width: 400px)')
+if (mediaQuery.matches) {
     tiltEffectSettings.scale = 0.9
     max = 0
-  }
+}
 
 
-  card.addEventListener("mouseenter", cardMouseEnter);
-  card.addEventListener("mousemove", cardMouseMove);
-  card.addEventListener("mouseleave", cardMouseLeave);
+card.addEventListener("mouseenter", cardMouseEnter);
+card.addEventListener("mousemove", cardMouseMove);
+card.addEventListener("mouseleave", cardMouseLeave);
 
 
-  
-  function cardMouseEnter(event) {
+
+function cardMouseEnter(event) {
     setTransition();
-  }
-  
-  function cardMouseMove(event) {
+}
+
+function cardMouseMove(event) {
     const cardWidth = card.offsetWidth;
     const cardHeight = card.offsetHeight;
     const centerX = card.offsetLeft + cardWidth;
     const centerY = card.offsetTop + cardHeight;
     const mouseX = event.clientX - centerX;
     const mouseY = event.clientY - centerY;
-    const rotateX = (-1)*(tiltEffectSettings.max*mouseY/(cardHeight/2));
-    const rotateY = (+1)*(tiltEffectSettings.max*mouseX/(cardWidth/2));
+    const rotateX = (-1) * (tiltEffectSettings.max * mouseY / (cardHeight / 2));
+    const rotateY = (+1) * (tiltEffectSettings.max * mouseX / (cardWidth / 2));
     // const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
     // const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
-  
+
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                             scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
-  }
-  
-  function cardMouseLeave(event) {
+}
+
+function cardMouseLeave(event) {
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     setTransition();
-  }
-  
-  function setTransition() {
+}
+
+function setTransition() {
     clearTimeout(card.transitionTimeoutId);
     card.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
     card.transitionTimeoutId = setTimeout(() => {
-      card.style.transition = "";
+        card.style.transition = "";
     }, tiltEffectSettings.speed);
-  }
+}
 
