@@ -104,8 +104,8 @@ document.addEventListener("mousemove", (e) => {
     const circleHeight = circle.offsetHeight;
     const circleWidth = circle.offsetWidth;
 
-    circle.style.left = `${e.pageX - circleWidth / 2}px`
-    circle.style.top = `${e.pageY - circleHeight / 2}px`
+    circle.style.left = `${e.pageX}px`
+    circle.style.top = `${e.pageY}px`
 
     gradientContainer.style.left = `${e.pageX - width / 2}px`
     gradientContainer.style.top = `${e.pageY - height / 2}px`
